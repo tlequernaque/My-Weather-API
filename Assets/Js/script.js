@@ -15,7 +15,6 @@ function getApi(lat, lon, city) {
       displayWeather(city, data);
     });
 }
-
 fetchButton.addEventListener('click', handleSearchClick);
 function handleSearchClick(e){
     console.log("handleSearchClick")
@@ -25,7 +24,6 @@ function handleSearchClick(e){
     console.log("city=",city)
     getGeoCoding(city);
 }
-
  function getGeoCoding(city){
     let url = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=3&appid=${APIKey}`
     fetch(url)
@@ -40,7 +38,6 @@ function handleSearchClick(e){
       getApi(lat, lon, city);
     });
  }
-
  function displayWeather(city, data){
     let date = (data.list[0].dt_txt).split(" ")[0];
     console.log("date = ", date);
@@ -52,4 +49,11 @@ function handleSearchClick(e){
     windEl.textContent = `Wind:  ${data.list[0].wind.speed} MPH`
     let humidityEl = document.getElementById("humidity");
     humidityEl.textContent = `Humidity:  ${data.list[0].main.humidity} %`
+ }
+ function fiveDayForecast(){
+    document.getElementById("dayOne")
+    document.getElementById("dayTwo")
+    document.getElementById("dayThree")
+    document.getElementById("dayFour")
+    document.getElementById("dayFive")
  }

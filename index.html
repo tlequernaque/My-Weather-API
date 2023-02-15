@@ -36,13 +36,11 @@
                     <button type="submit" class="btn text-center bg-dark" id="fetch-button">Search</button>
                     <!-- to be completed -->
                 </form>
-                <div>
+                <div id="searchHistory">
                     <!-- search history goes here to be completed -->
                 </div>
             </aside>
             <div class="col-md-9 pb-2">
-
-            </div>
             <section id="current">
                 <h4 id="city"></h4>
                 <p id="temp"></p>
@@ -51,13 +49,45 @@
                     <!-- current-today weather goes here  -->
             </section>
             <section id="5-dayForecast" class="row">
-                <div id="dayOne"></div>
-                <div id="dayTwo"></div>
-                <div id="dayThree"></div>
-                <div id="dayFour"></div>
-                <div id="dayFive"></div>
+                <h2>5-Day forecast</h2>
+                <div id="dayOne" class="col-md-2 bg-warning">
+                    <p id="dateDayOne"></p>
+                    <img id="iconDayOne" src="" alt=""></img>
+                    <p id="tempDayOne"></p>
+                    <p id="windDayOne"></p>
+                    <p id="humidityDayOne"></p>
+                </div>
+                <div id="dayTwo" class="col-md-2 bg-primary">
+                    <p id="dateDayTwo" ></p>
+                    <!-- <img id="iconDayOne" src="${iconSrc}" alt="Weather Icon"></img> -->
+                    <p id="tempDayTwo"></p>
+                    <p id="windDayTwo"></p>
+                    <p id="humidityDayTwo"></p>
+                </div>
+                <div id="dayThree" class="col-md-2 bg-info">
+                    <p id="dateDayThree"></p>
+                    <!-- <img id="iconDayOne" src="${iconSrc}" alt="Weather Icon"></img> -->
+                    <p id="tempDayThree"></p>
+                    <p id="windDayThree"></p>
+                    <p id="humidityDayThree"></p>
+                </div>
+                <div id="dayFour" class="col-md-2">
+                    <p id="dateDayFour"></p>
+                    <!-- <img id="iconDayOne" src="${iconSrc}" alt="Weather Icon"></img> -->
+                    <p id="tempDayFour"></p>
+                    <p id="windDayFour"></p>
+                    <p id="humidityDayFour"></p>
+                </div>
+                <div id="dayFive" class="col-md-2">
+                    <p id="dateDayFive"></p>
+                    <!-- <img id="iconDayOne" src="${iconSrc}" alt="Weather Icon"></img> -->
+                    <p id="tempDayFive"></p>
+                    <p id="windDayFive"></p>
+                    <p id="humidityDayFive"></p>
+                </div>
                 <!-- 5 day forecast goes here -->
             </section>
+            </div>
         </div>
     </div>
     <script src="./Assets/Js/script.js"></script>

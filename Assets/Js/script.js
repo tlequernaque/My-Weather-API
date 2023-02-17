@@ -78,19 +78,20 @@ function handleSearchClick(e){
  function fiveDayForecast(data){
     let dateDayOneEl = document.getElementById("dateDayOne");
     dateDayOneEl.textContent = `${data.list[7].dt_txt.split(" ")[0]}`;
-    // let iconDayOne = document.createElement("img");
-    let iconDayOne = document.getElementById("iconDayOne")
+    let iconDayOneEl = document.getElementById("iconDayOne")
     let iconUrl = `https://openweathermap.org/img/w/${data.list[7].weather[0].icon}.png`;
-    iconDayOne.setAttribute ('src', iconUrl);
+    iconDayOneEl.setAttribute ('src', iconUrl);
     let iconDescription = data.list[7].weather[0].description;
     iconDayOne.setAttribute ('alt', iconDescription);
     let tempDayOneEl = document.getElementById("tempDayOne");
     tempDayOneEl.textContent = `Temp:  ${data.list[7].main.temp} deg F`;
-    // dateDayOneEl.append (iconDayOne);
     let windDayOneEl = document.getElementById("windDayOne");
     windDayOneEl.textContent = `Wind:  ${data.list[7].wind.speed} MPH`;
     let humidityDayOneEl = document.getElementById("humidityDayOne");
     humidityDayOneEl.textContent = `Humidity:  ${data.list[7].main.humidity} %`;
+    let dayOneEl = document.getElementById("dayOne");
+    dayOneEl.classList.add("bg-dark");
+    dayOneEl.classList.add("text-light");
 
     let dateDayTwoEl = document.getElementById("dateDayTwo");
     dateDayTwoEl.textContent = `${data.list[15].dt_txt.split(" ")[0]}`;
@@ -110,20 +111,20 @@ function handleSearchClick(e){
     let tempDayThreeEl = document.getElementById("tempDayThree");
     tempDayThreeEl.textContent = `Temp:  ${data.list[23].main.temp} deg F`;
     let windDayThreeEl = document.getElementById("windDayThree");
-    windDayThreeEl.textContent = `Wind:  ${data.list[24].wind.speed} MPH`;
+    windDayThreeEl.textContent = `Wind:  ${data.list[23].wind.speed} MPH`;
     let humidityDayThreeEl = document.getElementById("humidityDayThree");
-    humidityDayThreeEl.textContent = `Humidity:  ${data.list[24].main.humidity} %`;
+    humidityDayThreeEl.textContent = `Humidity:  ${data.list[23].main.humidity} %`;
 
     let dateDayFourEl = document.getElementById("dateDayFour");
-    dateDayFourEl.textContent = `${data.list[32].dt_txt.split(" ")[0]}`;
+    dateDayFourEl.textContent = `${data.list[31].dt_txt.split(" ")[0]}`;
     // let iconDayFourEl = document.getElementById("iconDayFour");
     // iconDayFourEl.textContent = `${data.list[32].weather[0].icon}`;
     let tempDayFourEl = document.getElementById("tempDayFour");
-    tempDayFourEl.textContent = `Temp:  ${data.list[32].main.temp} deg F`;
+    tempDayFourEl.textContent = `Temp:  ${data.list[31].main.temp} deg F`;
     let windDayFourEl = document.getElementById("windDayFour");
-    windDayFourEl.textContent = `Wind:  ${data.list[32].wind.speed} MPH`;
+    windDayFourEl.textContent = `Wind:  ${data.list[31].wind.speed} MPH`;
     let humidityDayFourEl = document.getElementById("humidityDayFour");
-    humidityDayFourEl.textContent = `Humidity:  ${data.list[32].main.humidity} %`;
+    humidityDayFourEl.textContent = `Humidity:  ${data.list[31].main.humidity} %`;
 
     let dateDayFiveEl = document.getElementById("dateDayFive");
     dateDayFiveEl.textContent = `${data.list[39].dt_txt.split(" ")[0]}`;
@@ -137,3 +138,8 @@ function handleSearchClick(e){
     humidityDayFiveEl.textContent = `Humidity:  ${data.list[39].main.humidity} %`;
   
  }
+let storedCities = localStorage.getItem("searchHistory")
+if (storedCities){
+    searchHistory = JSON.parse(storedCities);
+}
+displayHistory();

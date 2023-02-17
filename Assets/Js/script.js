@@ -24,7 +24,6 @@ function displayHistory(){
     }
 }
 function getApi(lat, lon, city) {
-    console.log("getApi")
   var requestUrl = `https://api.openweathermap.org/data/2.5/forecast?units=imperial&lat=${lat}&lon=${lon}&appid=${APIKey}`;
 
   fetch(requestUrl)
@@ -41,11 +40,9 @@ function getApi(lat, lon, city) {
 }
 fetchButton.addEventListener('click', handleSearchClick);
 function handleSearchClick(e){
-    console.log("handleSearchClick")
     e.preventDefault();
     let submitInputEl= document.getElementById("cityInput");
     let city = submitInputEl.value.trim();
-    console.log("city=",city)
     getGeoCoding(city);
 }
  function getGeoCoding(city){
@@ -64,7 +61,6 @@ function handleSearchClick(e){
  }
  function displayWeather(city, data){
     let date = (data.list[0].dt_txt).split(" ")[0];
-    console.log("date = ", date);
     let dateEl = document.getElementById("city");
     dateEl.textContent = `${city}   ${date}`;
     let tempEl = document.getElementById("temp");

@@ -10,6 +10,12 @@ function addSearchHistory(city){
     localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
     displayHistory();
 }
+function handleHistorySearch(e){
+    e.preventDefault();
+    let city = e.target.dataset.search
+    getGeoCoding(city);
+}
+
 function displayHistory(){
     let historyDiv = document.getElementById("searchHistory");
     historyDiv.innerHTML = "";
@@ -17,7 +23,7 @@ function displayHistory(){
     for(let i = searchHistory.length -1; i >= 0; i--){
         let btn = document.createElement("button");
         btn.setAttribute("type", "button");
-
+        btn.addEventListener("click", handleHistorySearch)
         btn.setAttribute("data-search", searchHistory[i]); 
         btn.textContent = searchHistory[i];
         historyDiv.append(btn)
@@ -213,3 +219,4 @@ if (storedCities){
     searchHistory = JSON.parse(storedCities);
 }
 displayHistory();
+

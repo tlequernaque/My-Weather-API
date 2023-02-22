@@ -109,9 +109,9 @@ function handleSearchClick(e){
     let dateDayThreeEl = document.getElementById("dateDayThree");
     dateDayThreeEl.textContent = `${data.list[23].dt_txt.split(" ")[0]}`;
     let iconDayThreeEl = document.getElementById("iconDayThree");
-    let iconThreeUrl = `https://openweathermap.org/img/w/${data.list[15].weather[0].icon}.png`;
+    let iconThreeUrl = `https://openweathermap.org/img/w/${data.list[23].weather[0].icon}.png`;
     iconDayThreeEl.setAttribute ('src', iconThreeUrl);
-    let iconThreeDescription = data.list[15].weather[0].description;
+    let iconThreeDescription = data.list[23].weather[0].description;
     iconDayOne.setAttribute ('alt', iconThreeDescription);
     let tempDayThreeEl = document.getElementById("tempDayThree");
     tempDayThreeEl.textContent = `Temp:  ${data.list[23].main.temp} deg F`;
@@ -119,33 +119,45 @@ function handleSearchClick(e){
     windDayThreeEl.textContent = `Wind:  ${data.list[23].wind.speed} MPH`;
     let humidityDayThreeEl = document.getElementById("humidityDayThree");
     humidityDayThreeEl.textContent = `Humidity:  ${data.list[23].main.humidity} %`;
-    let dayThreeEl = document.getElementById("dayTwo");
+    let dayThreeEl = document.getElementById("dayThree");
     dayThreeEl.classList.add('bg-dark');
     dayThreeEl.classList.add("text-light");
 
 
     let dateDayFourEl = document.getElementById("dateDayFour");
     dateDayFourEl.textContent = `${data.list[31].dt_txt.split(" ")[0]}`;
-    // let iconDayFourEl = document.getElementById("iconDayFour");
-    // iconDayFourEl.textContent = `${data.list[32].weather[0].icon}`;
+    let iconDayFourEl = document.getElementById("iconDayFour");
+    let iconFourUrl = `https://openweathermap.org/img/w/${data.list[15].weather[0].icon}.png`;
+    iconDayFourEl.setAttribute ('src', iconFourUrl);
+    let iconFourDescription = data.list[31].weather[0].description;
+    iconDayOne.setAttribute ('alt', iconFourDescription);
     let tempDayFourEl = document.getElementById("tempDayFour");
     tempDayFourEl.textContent = `Temp:  ${data.list[31].main.temp} deg F`;
     let windDayFourEl = document.getElementById("windDayFour");
     windDayFourEl.textContent = `Wind:  ${data.list[31].wind.speed} MPH`;
     let humidityDayFourEl = document.getElementById("humidityDayFour");
     humidityDayFourEl.textContent = `Humidity:  ${data.list[31].main.humidity} %`;
+    let dayFourEl = document.getElementById("dayFour");
+    dayFourEl.classList.add('bg-dark');
+    dayFourEl.classList.add("text-light");
+
 
     let dateDayFiveEl = document.getElementById("dateDayFive");
     dateDayFiveEl.textContent = `${data.list[39].dt_txt.split(" ")[0]}`;
-    // let iconDayFiveEl = document.getElementById("iconDayFive");
-    // iconDayFiveEl.textContent = `${data.list[39].weather[0].icon}`;
+    let iconDayFiveEl = document.getElementById("iconDayFive");
+    let iconFiveUrl = `https://openweathermap.org/img/w/${data.list[39].weather[0].icon}.png`;
+    iconDayFiveEl.setAttribute ('src', iconFiveUrl);
+    let iconFiveDescription = data.list[39].weather[0].description;
+    iconDayOne.setAttribute ('alt', iconFiveDescription);
     let tempDayFiveEl = document.getElementById("tempDayFive");
     tempDayFiveEl.textContent = `Temp:  ${data.list[39].main.temp} deg F`;
     let windDayFiveEl = document.getElementById("windDayFive");
     windDayFiveEl.textContent = `Wind:  ${data.list[39].wind.speed} MPH`;
     let humidityDayFiveEl = document.getElementById("humidityDayFive");
     humidityDayFiveEl.textContent = `Humidity:  ${data.list[39].main.humidity} %`;
-  
+    let dayFiveEl = document.getElementById("dayFive");
+    dayFiveEl.classList.add('bg-dark');
+    dayFiveEl.classList.add("text-light");
  }
 let storedCities = localStorage.getItem("searchHistory")
 if (storedCities){

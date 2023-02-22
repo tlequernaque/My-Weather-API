@@ -91,25 +91,38 @@ function handleSearchClick(e){
 
     let dateDayTwoEl = document.getElementById("dateDayTwo");
     dateDayTwoEl.textContent = `${data.list[15].dt_txt.split(" ")[0]}`;
-    // let iconDayTwoEl = document.getElementById("iconDayTwo");
-    // iconDayTwoEl.textContent = `${data.list[16].weather[0].icon}`;
+    let iconDayTwoEl = document.getElementById("iconDayTwo");
+    let iconTwoUrl = `https://openweathermap.org/img/w/${data.list[15].weather[0].icon}.png`;
+    iconDayTwoEl.setAttribute ('src', iconTwoUrl);
+    let iconTwoDescription = data.list[15].weather[0].description;
+    iconDayOne.setAttribute ('alt', iconTwoDescription);
     let tempDayTwoEl = document.getElementById("tempDayTwo");
     tempDayTwoEl.textContent = `Temp:  ${data.list[15].main.temp} deg F`;
     let windDayTwoEl = document.getElementById("windDayTwo");
     windDayTwoEl.textContent = `Wind:  ${data.list[15].wind.speed} MPH`;
     let humidityDayTwoEl = document.getElementById("humidityDayTwo");
     humidityDayTwoEl.textContent = `Humidity:  ${data.list[15].main.humidity} %`;
+    let dayTwoEl = document.getElementById("dayTwo");
+    dayTwoEl.classList.add('bg-dark');
+    dayTwoEl.classList.add("text-light");
 
     let dateDayThreeEl = document.getElementById("dateDayThree");
     dateDayThreeEl.textContent = `${data.list[23].dt_txt.split(" ")[0]}`;
-    // let iconDayThreeEl = document.getElementById("iconDayThree");
-    // iconDayThreeEl.textContent = `${data.list[24].weather[0].icon}`;
+    let iconDayThreeEl = document.getElementById("iconDayThree");
+    let iconThreeUrl = `https://openweathermap.org/img/w/${data.list[15].weather[0].icon}.png`;
+    iconDayThreeEl.setAttribute ('src', iconThreeUrl);
+    let iconThreeDescription = data.list[15].weather[0].description;
+    iconDayOne.setAttribute ('alt', iconThreeDescription);
     let tempDayThreeEl = document.getElementById("tempDayThree");
     tempDayThreeEl.textContent = `Temp:  ${data.list[23].main.temp} deg F`;
     let windDayThreeEl = document.getElementById("windDayThree");
     windDayThreeEl.textContent = `Wind:  ${data.list[23].wind.speed} MPH`;
     let humidityDayThreeEl = document.getElementById("humidityDayThree");
     humidityDayThreeEl.textContent = `Humidity:  ${data.list[23].main.humidity} %`;
+    let dayThreeEl = document.getElementById("dayTwo");
+    dayThreeEl.classList.add('bg-dark');
+    dayThreeEl.classList.add("text-light");
+
 
     let dateDayFourEl = document.getElementById("dateDayFour");
     dateDayFourEl.textContent = `${data.list[31].dt_txt.split(" ")[0]}`;

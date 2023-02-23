@@ -1,15 +1,15 @@
 # My-Weather-API
 
 ## Description
-This is my portfolio that I created to showcase my work. The portfolio shows all the work and projects, that I've been a part of and completed, and links connecting them to the live sites. The footer also includes ways to contact me. 
+This webpage was created to give weather information. You can type a city name on the input line and the current weather along with a 5 day forecast will shoiw up. Whenever  you type different city names it will be store the previous cities typed. You can click on the previous city names and the webpage will ugrade and give you the the current weather and 5 day forecast. 
 
 ## Links
 
-- [Live](https://tlequernaque.github.io/Portfolio-ch2/Index.html)
+- [Live](https://tlequernaque.github.io/My-Weather-API/)
 
 ## Screenshots
 
-![](./images/portfolio-site-screenshot.png)
+![](./images/My-Weather-API.png)
 
 ## Available Commands
 
@@ -19,6 +19,7 @@ N/A
 
 - HTML
 - CSS
+- JavaScript
 
 ## Future Updates
 
